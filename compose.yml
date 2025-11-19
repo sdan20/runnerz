@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:18.1'
+    environment:
+      - 'POSTGRES_DB=runnerz'
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=sdan20'
+    ports:
+      - '5432:5432'
