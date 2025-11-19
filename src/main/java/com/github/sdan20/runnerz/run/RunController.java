@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @RestController
 @RequestMapping("/api/runs")
@@ -36,7 +34,7 @@ public class RunController {
     @GetMapping("/{id}")
     Run findById(@PathVariable Integer id) {
         Optional<Run> run = (runRepository.findById(id));
-        if(run.isEmpty()) {
+        if (run.isEmpty()) {
             throw new RunNotFoundException();
         }
         return run.get();
@@ -64,6 +62,5 @@ public class RunController {
     List<Run> findByLocation(@PathVariable String location) {
         return runRepository.findAllByLocation(location);
     }
-    
 
 }
